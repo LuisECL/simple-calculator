@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
   </style>
@@ -16,25 +17,24 @@
 
 <body>
   <div class="calculator">
-    <div id="screen">0123456789</div>
-    <button class="operator" id="memory-clear">MC</button>
-    <button class="operator" id="memory-plus">M+</button>
+    <div id="screen"></div>
+    <button class="operator" id="clear">Clear</button>
     <button class="operator" id="btn-divide">/</button>
     <button class="operator" id="btn-multiply">X</button>
-    <button class="number">7</button>
-    <button class="number">8</button>
-    <button class="number">9</button>
+    <button class="number" value="7">7</button>
+    <button class="number" value="8">8</button>
+    <button class="number" value="9">9</button>
     <button class="operator" id="btn-minus">-</button>
-    <button class="number">4</button>
-    <button class="number">5</button>
-    <button class="number">6</button>
-    <button class="operator" id="btn-plus">+</button>
-    <button class="number">1</button>
-    <button class="number">2</button>
-    <button class="number">3</button>
+    <button class="number" value="4">4</button>
+    <button class="number" value="5">5</button>
+    <button class="number" value="6">6</button>
+    <button class="operator" id="btn-plus" value="+">+</button>
+    <button class="number" value="1">1</button>
+    <button class="number" value="2">2</button>
+    <button class="number" value="3">3</button>
     <button id="btn-equals">=</button>
-    <button class="number" id="zero">0</button>
-    <button class="number" id="btn-dot">.</button>
+    <button class="number" value="0" id="zero">0</button>
+    <button class="number" value="." id="btn-dot">.</button>
   </div>
 </body>
 
