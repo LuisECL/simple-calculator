@@ -23,9 +23,13 @@ window.onload = function() {
   });
 
   operators.forEach(e => {
+<<<<<<< HEAD
     e.addEventListener('click', () => {
       operate(e);
     });
+=======
+    operate(e)
+>>>>>>> 69e345e3d7798ae6040740cb21c1fdaeac06a02f
   })
 
   btn_clear.addEventListener('click', () => {
@@ -80,7 +84,12 @@ window.onload = function() {
   }
 
   function operate (e) {
+<<<<<<< HEAD
     operator = e.value
+=======
+    e.addEventListener('click', () => {
+      operator = e.value
+>>>>>>> 69e345e3d7798ae6040740cb21c1fdaeac06a02f
       console.log("operator", operator)
 
       if (num1 == 0) {
@@ -90,6 +99,10 @@ window.onload = function() {
       }
       updateScreen(e.value);
       console.log(num1, num2)
+<<<<<<< HEAD
+=======
+    });
+>>>>>>> 69e345e3d7798ae6040740cb21c1fdaeac06a02f
   }
 
   function resolve () {
