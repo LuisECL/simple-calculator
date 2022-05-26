@@ -24,16 +24,7 @@ window.onload = function() {
 
   operators.forEach(e => {
     e.addEventListener('click', () => {
-      operator = e.value
-      console.log(operator)
-
-      if (num1 == 0) {
-        num1 = Number(screen.innerText)
-      } else {
-        num2 = Number(screen.innerText.split(e.value)[1])
-      }
-      updateScreen(e.value);
-      console.log(num1, num2)
+      operate(e);
     });
   })
 
@@ -86,6 +77,19 @@ window.onload = function() {
 
   function divide(a, b) {
     return a/b;
+  }
+
+  function operate (e) {
+    operator = e.value
+      console.log("operator", operator)
+
+      if (num1 == 0) {
+        num1 = Number(screen.innerText)
+      } else {
+        num2 = Number(screen.innerText.split(e.value)[1])
+      }
+      updateScreen(e.value);
+      console.log(num1, num2)
   }
 
   function resolve () {
