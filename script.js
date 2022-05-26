@@ -23,13 +23,16 @@ window.onload = function() {
   });
 
   operators.forEach(e => {
-<<<<<<< HEAD
     e.addEventListener('click', () => {
-      operate(e);
+      if (operator == ""){
+        operate(e);
+      } else {
+        resolve();
+        operator = e.value;
+        updateScreen(e.value);
+      }
+
     });
-=======
-    operate(e)
->>>>>>> 69e345e3d7798ae6040740cb21c1fdaeac06a02f
   })
 
   btn_clear.addEventListener('click', () => {
@@ -84,12 +87,7 @@ window.onload = function() {
   }
 
   function operate (e) {
-<<<<<<< HEAD
     operator = e.value
-=======
-    e.addEventListener('click', () => {
-      operator = e.value
->>>>>>> 69e345e3d7798ae6040740cb21c1fdaeac06a02f
       console.log("operator", operator)
 
       if (num1 == 0) {
@@ -99,10 +97,6 @@ window.onload = function() {
       }
       updateScreen(e.value);
       console.log(num1, num2)
-<<<<<<< HEAD
-=======
-    });
->>>>>>> 69e345e3d7798ae6040740cb21c1fdaeac06a02f
   }
 
   function resolve () {
@@ -120,21 +114,25 @@ window.onload = function() {
     if (op == '+') {
       num1 = screen.innerText = add(a, b);
       num2 = 0
+      operator = ""
       screen.innerText = num1
       console.log (num1, num2)
     } else if (op == '-') {
       num1 = screen.innerText = subtract(a, b);
       num2 = 0
+      operator = ""
       screen.innerText = num1
       console.log (num1, num2)
     } else if (op == 'x') {
       num1 = screen.innerText = multiply(a, b);
       num2 = 0
+      operator = ""
       screen.innerText = num1
       console.log (num1, num2)
     } else if (op == '/') {
       num1 = screen.innerText = divide(a, b);
       num2 = 0
+      operator = ""
       screen.innerText = num1
       console.log (num1, num2)
     }
