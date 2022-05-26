@@ -76,9 +76,36 @@ window.onload = function() {
     return a + b;
   }
 
+  function subtract(a, b) {
+    return a-b;
+  }
+
+  function multiply(a, b) {
+    return a*b;
+  }
+
+  function divide(a, b) {
+    return a/b;
+  }
+
   function calculation(a, op, b) {
     if (op == '+') {
       num1 = screen.innerText = add(a, b);
+      num2 = 0
+      screen.innerText = num1
+      console.log (num1, num2)
+    } else if (op == '-') {
+      num1 = screen.innerText = subtract(a, b);
+      num2 = 0
+      screen.innerText = num1
+      console.log (num1, num2)
+    } else if (op == 'x') {
+      num1 = screen.innerText = multiply(a, b);
+      num2 = 0
+      screen.innerText = num1
+      console.log (num1, num2)
+    } else if (op == '/') {
+      num1 = screen.innerText = divide(a, b);
       num2 = 0
       screen.innerText = num1
       console.log (num1, num2)
