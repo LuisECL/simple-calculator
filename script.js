@@ -42,14 +42,7 @@ window.onload = function() {
   })
 
   btn_equals.addEventListener('click', () => {
-    if (num1 == 0) {
-      num1 = Number(screen.innerText)
-    } else {
-      getLastNumber(screen.innerText)
-    }
-
-    console.log(num1, num2)
-    calculation(num1, operator, num2)
+    resolve()
   })
 
   // Functions
@@ -93,6 +86,17 @@ window.onload = function() {
 
   function divide(a, b) {
     return a/b;
+  }
+
+  function resolve () {
+    if (num1 == 0) {
+      num1 = Number(screen.innerText)
+    } else {
+      getLastNumber(screen.innerText)
+    }
+
+    console.log(num1, num2)
+    calculation(num1, operator, num2)
   }
 
   function calculation(a, op, b) {
