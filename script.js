@@ -8,10 +8,11 @@ window.onload = function() {
   let btn_multiply = document.getElementById('btn-multiply');
   let btn_divide = document.getElementById('btn-divide');
   let btn_clear = document.getElementById('clear');
+  let btn_equals = document.getElementById('btn-equals')
 
   let operators = [btn_plus, btn_minus, btn_multiply, btn_divide]
-  let screenDisplay = ""
-  let calculation = 0
+  let num1 = 0;
+  let num2 = 0;
 
   // Event Listeners
   numbers.forEach(e => {
@@ -22,7 +23,13 @@ window.onload = function() {
 
   operators.forEach(e => {
     e.addEventListener('click', () => {
+      if (num1 == 0) {
+        num1 = Number(screen.innerText)
+      } else {
+        num2 = Number(screen.innerText.split(e.value)[1])
+      }
       updateScreen(e.value);
+      console.log(num1, num2)
     });
   })
 
@@ -30,6 +37,17 @@ window.onload = function() {
     clearScreen()
   })
 
+  btn_equals.addEventListener('click', () => {
+    if (num1 == 0) {
+      num1 = Number(screen.innerText)
+    } else {
+      if (screen.innerText.includes('+')){
+        num2 = Number(screen.innerText.split('+')[1])
+      }
+    }
+
+    console.log(num1, num2)
+  })
 
   // Functions
   function updateScreen(s) {
@@ -40,5 +58,12 @@ window.onload = function() {
     screen.innerText = ""
   }
 
+  function add(a, b) {
+    return a + b;
+  }
+
+  function calculation(num1, op, num2) {
+    return op(num1, num2)
+  }
 
 }
