@@ -45,15 +45,7 @@ window.onload = function() {
     if (num1 == 0) {
       num1 = Number(screen.innerText)
     } else {
-      if (screen.innerText.includes('+')){
-        num2 = Number(screen.innerText.split('+')[1])
-      } else if (screen.innerText.includes('-')){
-        num2 = Number(screen.innerText.split('-')[1])
-      } else if (screen.innerText.includes('x')){
-        num2 = Number(screen.innerText.split('x')[1])
-      } else if (screen.innerText.includes('/')){
-        num2 = Number(screen.innerText.split('/')[1])
-      }
+      getLastNumber(screen.innerText)
     }
 
     console.log(num1, num2)
@@ -70,6 +62,21 @@ window.onload = function() {
     num1 = 0;
     num2 = 0;
     console.log(num1, num2)
+  }
+
+  function getLastNumber(str) {
+    if (str.includes('+')){
+      num2 = Number(str.split('+')[1])
+      if (num2 == NaN) {
+        num2 = num2.slice(0,-1)
+      }
+    } else if (str.includes('-')){
+      num2 = Number(str.split('-')[1])
+    } else if (str.includes('x')){
+      num2 = Number(str.split('x')[1])
+    } else if (str.includes('/')){
+      num2 = Number(str.split('/')[1])
+    }
   }
 
   function add(a, b) {
