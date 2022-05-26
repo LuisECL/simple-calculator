@@ -43,6 +43,12 @@ window.onload = function() {
     } else {
       if (screen.innerText.includes('+')){
         num2 = Number(screen.innerText.split('+')[1])
+      } else if (screen.innerText.includes('-')){
+        num2 = Number(screen.innerText.split('-')[1])
+      } else if (screen.innerText.includes('x')){
+        num2 = Number(screen.innerText.split('x')[1])
+      } else if (screen.innerText.includes('/')){
+        num2 = Number(screen.innerText.split('/')[1])
       }
     }
 
@@ -55,7 +61,10 @@ window.onload = function() {
   }
 
   function clearScreen() {
-    screen.innerText = ""
+    screen.innerText = "";
+    num1 = 0;
+    num2 = 0;
+    console.log(num1, num2)
   }
 
   function add(a, b) {
