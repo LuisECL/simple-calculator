@@ -13,6 +13,7 @@ window.onload = function() {
   let operators = [btn_plus, btn_minus, btn_multiply, btn_divide]
   let num1 = 0;
   let num2 = 0;
+  operator = ''
 
   // Event Listeners
   numbers.forEach(e => {
@@ -23,6 +24,9 @@ window.onload = function() {
 
   operators.forEach(e => {
     e.addEventListener('click', () => {
+      operator = e.value
+      console.log(operator)
+
       if (num1 == 0) {
         num1 = Number(screen.innerText)
       } else {
@@ -53,6 +57,7 @@ window.onload = function() {
     }
 
     console.log(num1, num2)
+    calculation(num1, operator, num2)
   })
 
   // Functions
@@ -71,8 +76,13 @@ window.onload = function() {
     return a + b;
   }
 
-  function calculation(num1, op, num2) {
-    return op(num1, num2)
+  function calculation(a, op, b) {
+    if (op == '+') {
+      num1 = screen.innerText = add(a, b);
+      num2 = 0
+      screen.innerText = num1
+      console.log (num1, num2)
+    }
   }
 
 }
