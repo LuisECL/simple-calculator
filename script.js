@@ -22,13 +22,19 @@ window.onload = function() {
   operator = ''
 
   // Event Listeners --------------------------------------------
-  // ... for Keyboard
+  // ... for Keyboard events
   document.addEventListener('keydown', e => {
     for (var i=0; i<10; i++){
       console.log(e.key, e.code)
       if (e.code == `Numpad${i}`){
         updateScreen(e.key)
       }
+    }
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.code == 'NumpadDecimal' || e.code == 'Period'){
+      updateScreen('.')
     }
   });
 
