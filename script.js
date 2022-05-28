@@ -62,6 +62,12 @@ window.onload = function() {
     }
   })
 
+  document.addEventListener('keydown', e => {
+    if (e.code == 'Backspace' || e.code == 'Delete'){
+      clearScreen()
+    }
+  })
+
   // ... for DOM elements
   numbers.forEach(e => {
     e.addEventListener('click', () => {
