@@ -1,5 +1,5 @@
 window.onload = function() {
-  // DOM elements
+  // DOM elements -----------------------------------------------
   let screen = document.getElementById('screen');
   let numbersHTML = document.getElementsByClassName('number')
   let numbers = Array.from(numbersHTML);
@@ -10,13 +10,19 @@ window.onload = function() {
   let btn_clear = document.getElementById('clear');
   let btn_equals = document.getElementById('btn-equals')
 
+  let numpadOperators = [
+    {value:'+', code:'NumpadAdd'},
+    {value:'-', code:'NumpadSubtract'},
+    {value:'*', code:'NumpadMultiply'},
+    {value:'/', code:'DivideAdd'}
+  ];
   let operators = [btn_plus, btn_minus, btn_multiply, btn_divide]
   let num1 = 0;
   let num2 = 0;
   operator = ''
 
-  // Event Listeners
-
+  // Event Listeners --------------------------------------------
+  // ... for Keyboard
   document.addEventListener('keydown', e => {
     for (var i=0; i<10; i++){
       console.log(e.key, e.code)
@@ -24,8 +30,35 @@ window.onload = function() {
         updateScreen(e.key)
       }
     }
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.code == 'NumpadAdd'){
+      console.log(numpadOperators[0], numpadOperators[0].value);
+
+      if (operator == ""){
+        operate(numpadOperators[0]);
+      } else {
+        resolve();
+        operator = numpadOperators[0].value;
+        updateScreen(numpadOperators[0].value);
+      }
+    }
   })
 
+  // document.addEventListener('keydown', e=> {
+  //   for (let npOperator of numpadOperators) {
+  //     if (operator == ""){
+  //       operate(npOperator);
+  //     } else {
+  //       resolve();
+  //       operator = e.value;
+  //       updateScreen(e.value);
+  //     }
+  //   }
+  // })
+
+  // ... for DOM elements
   numbers.forEach(e => {
     e.addEventListener('click', () => {
       updateScreen(e.value)
@@ -53,7 +86,7 @@ window.onload = function() {
     resolve()
   })
 
-  // Functions
+  // Functions ----------------------------------------------------
   function updateScreen(s) {
     screen.innerText = screen.innerText + s
   }
