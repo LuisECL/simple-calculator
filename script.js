@@ -50,6 +50,12 @@ window.onload = function() {
 
   })
 
+  document.addEventListener('keydown', e => {
+    if (e.code == 'NumpadEnter' || e.code == 'Enter'){
+      resolve()
+    }
+  })
+
   // ... for DOM elements
   numbers.forEach(e => {
     e.addEventListener('click', () => {
