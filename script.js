@@ -16,6 +16,16 @@ window.onload = function() {
   operator = ''
 
   // Event Listeners
+
+  document.addEventListener('keydown', e => {
+    for (var i=0; i<10; i++){
+      console.log(e.key, e.code)
+      if (e.code == `Numpad${i}`){
+        updateScreen(e.key)
+      }
+    }
+  })
+
   numbers.forEach(e => {
     e.addEventListener('click', () => {
       updateScreen(e.value)
