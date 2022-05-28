@@ -14,7 +14,7 @@ window.onload = function() {
     {value:'+', code:'NumpadAdd'},
     {value:'-', code:'NumpadSubtract'},
     {value:'*', code:'NumpadMultiply'},
-    {value:'/', code:'DivideAdd'}
+    {value:'/', code:'NumpadDivide'}
   ];
   let operators = [btn_plus, btn_minus, btn_multiply, btn_divide]
   let num1 = 0;
@@ -33,30 +33,22 @@ window.onload = function() {
   });
 
   document.addEventListener('keydown', e => {
-    if (e.code == 'NumpadAdd'){
-      console.log(numpadOperators[0], numpadOperators[0].value);
+    for (let npOperator of numpadOperators) {
 
-      if (operator == ""){
-        operate(numpadOperators[0]);
-      } else {
-        resolve();
-        operator = numpadOperators[0].value;
-        updateScreen(numpadOperators[0].value);
+      if (e.code == npOperator.code){
+        //console.log(npOperator, npOperator.value);
+
+        if (operator == ""){
+          operate(npOperator);
+        } else {
+          resolve();
+          operator = npOperator.value;
+          updateScreen(npOperator.value);
+        }
       }
     }
-  })
 
-  // document.addEventListener('keydown', e=> {
-  //   for (let npOperator of numpadOperators) {
-  //     if (operator == ""){
-  //       operate(npOperator);
-  //     } else {
-  //       resolve();
-  //       operator = e.value;
-  //       updateScreen(e.value);
-  //     }
-  //   }
-  // })
+  })
 
   // ... for DOM elements
   numbers.forEach(e => {
