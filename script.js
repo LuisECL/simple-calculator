@@ -13,7 +13,7 @@ window.onload = function() {
   let numpadOperators = [
     {value:'+', code:'NumpadAdd'},
     {value:'-', code:'NumpadSubtract'},
-    {value:'*', code:'NumpadMultiply'},
+    {value:'x', code:'NumpadMultiply'},
     {value:'/', code:'NumpadDivide'}
   ];
   let operators = [btn_plus, btn_minus, btn_multiply, btn_divide]
