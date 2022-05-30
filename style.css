@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
 
-  background-color: #ffaabb;
+  background-color: #dfdfdf;
 }
 
 body {
@@ -179,10 +179,6 @@ input:checked + .slider::before {
 
 .slider.round::before {
   border-radius: 50%;
-}
-
-.instructions > p {
-  
 }
 
 .hide {
