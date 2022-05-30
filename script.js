@@ -9,6 +9,8 @@ window.onload = function() {
   let btn_divide = document.getElementById('btn-divide');
   let btn_clear = document.getElementById('clear');
   let btn_equals = document.getElementById('btn-equals')
+  let inst_switch = document.querySelector('.switch > input')
+  let inst_text = document.querySelectorAll('.instructions > p')
 
   let numpadOperators = [
     {value:'+', code:'NumpadAdd'},
@@ -94,6 +96,12 @@ window.onload = function() {
 
   btn_equals.addEventListener('click', () => {
     resolve()
+  })
+
+  inst_switch.addEventListener('click', () => {
+    inst_text[0].classList.toggle('hide');
+    inst_text[1].classList.toggle('hide');
+    console.log(inst_text[0], inst_text[1])
   })
 
   // Functions ----------------------------------------------------

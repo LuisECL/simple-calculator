@@ -108,7 +108,8 @@ button {
   width: clamp(300px, 50%, 600px);
   display: flex;
   flex-direction: column;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  position: relative;
 }
 
 .switch-container {
@@ -141,7 +142,7 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: #2196F3;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -159,7 +160,7 @@ button {
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #2cbb57;
 }
 
 input:focus + .slider {
@@ -180,3 +181,14 @@ input:checked + .slider::before {
   border-radius: 50%;
 }
 
+.instructions > p {
+  
+}
+
+.hide {
+  background-color: #50bb50;
+  width: 100%;
+  position: absolute;
+  top: 42px;
+  display: none;
+}
