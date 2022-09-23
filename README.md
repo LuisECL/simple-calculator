@@ -20,3 +20,5 @@ Deployed via **gitHub Pages**, check it out and let me know what you think! [Lin
 This project includes:
 - Fully functional **on-screen buttons** to operate the calculator
 - **Keyboard events**: Numpad and regular "top row" numbers, Backspace and Enter keys
+- Radio button to **change the instruction's language** between Portuguese and English
+<img src="img/screenshot.jpg">
