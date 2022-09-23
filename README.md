@@ -2,7 +2,7 @@
 
 This simple app works as a **simple calculator**, allowing the user to perform any of the main 4 calculations (add, subtract, multiply, divide), using both whole and decimal numbers.
 
-Deployed via **gitHub Pages**, check it out and let me know what you think! [Link](https://luisecl.github.io/CL73/)
+Deployed via **gitHub Pages**, check it out and let me know what you think! [Link](https://luisecl.github.io/simple-calculator/)
 
 ## Tech Stack
 <div style="display: inline_block"><br>
